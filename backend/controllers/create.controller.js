@@ -60,8 +60,8 @@ const createController = async (req, res) => {
         rule : newRule,
     })
   } catch (error) {
-    console.log("error", error.message);
-    res.json(error.message);
+    console.log("Error during evaluation:", error.message);
+    res.status(500).json({ message: "Error during rule creation" });
   }
 };
 
