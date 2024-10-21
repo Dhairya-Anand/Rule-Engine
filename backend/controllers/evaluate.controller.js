@@ -1,13 +1,22 @@
 const Rule = require("../models/rule.model");
 
 const evaluateController = async (req, res) => {
-  const { ruleName, data } = req.body;
-
   try {
+    const { ruleName, data } = req.body;
+    if (!ruleName) {
+      return res
+        .status(400)
+        .json({ error: "Invalid input: 'ruleName' is required." });
+    }
+    if (!data || typeof data !== "object") {
+      return res
+        .status(400)
+        .json({ error: "Invalid input: 'data' must be a valid object." });
+    }
     const rule = await Rule.findOne({ rule_name: ruleName });
 
     if (!rule) {
-      return res.status(404).json({ message: "Rule not found" });
+      return res.status(404).json({ error: "Rule not found" });
     }
 
     const postfixExpression = rule.postfix_expr;
@@ -53,8 +62,8 @@ const evaluateController = async (req, res) => {
       evaluationResult: result,
     });
   } catch (error) {
-    console.log("Error during evaluation:", error.message);
-    res.status(500).json({ message: "Error during rule evaluation" });
+    console.error("Error during rule evaluation:", error.message);
+    res.status(500).json({ error: "Error during rule evaluation" });
   }
 };
 
