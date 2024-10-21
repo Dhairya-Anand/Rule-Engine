@@ -8,6 +8,12 @@ const createController = async (req, res) => {
         error: "Invalid input: 'ruleName' and 'ruleString' are required.",
       });
     }
+
+    const rule = await Rule.findOne({ rule_name: ruleName });
+    if (rule) {
+      return res.status(404).json({ error: "Rule already exists" });
+    }
+
     const infixToPostfix = (infix) => {
       const precedence = {
         ">=": 2,
