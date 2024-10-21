@@ -1,7 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const createRoute = require("./routes/create.route");
-const evaluateController = require("./controllers/evaluate.controller");
+const evaluateRoute = require("./routes/evaluate.route");
+const combineRoute = require("./routes/combine.rule");
 
 const PORT = 3000;
 
@@ -18,7 +19,8 @@ const app = express();
 app.use(express.json());
 
 app.use("/create-rule",createRoute);
-app.use("/evaluate-rule",evaluateController);
+app.use("/evaluate-rule",evaluateRoute);
+app.use("/combine-rule",combineRoute);
 
 app.listen(PORT,() =>{
     console.log(`Server is listening on port ${PORT}`);
