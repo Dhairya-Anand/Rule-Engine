@@ -2,11 +2,10 @@ import React, { useState } from "react";
 
 const CombineRule = () => {
   const [ruleName, setRuleName] = useState("");
-  const [rules, setRules] = useState(["", ""]); // Initialize with two empty rules
+  const [rules, setRules] = useState(["", ""]);
   const [responseMessage, setResponseMessage] = useState(null);
   const [errorMessage, setErrorMessage] = useState(null);
 
-  // Handle change in each rule condition
   const handleRuleChange = (index, value) => {
     const updatedRules = [...rules];
     updatedRules[index] = value;
@@ -16,7 +15,6 @@ const CombineRule = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Check for empty or whitespace-only inputs
     if (!ruleName.trim() || rules.some(rule => !rule.trim())) {
       setErrorMessage("Please fill in all fields without blank spaces.");
       setResponseMessage(null);
@@ -31,7 +29,7 @@ const CombineRule = () => {
         },
         body: JSON.stringify({
           ruleName,
-          rules, // Sending the two rules
+          rules,
         }),
       });
 
