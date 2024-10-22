@@ -18,9 +18,9 @@ const app = express();
 
 app.use(express.json());
 
-app.use("/create-rule",createRoute);
-app.use("/evaluate-rule",evaluateRoute);
-app.use("/combine-rule",combineRoute);
+app.use("/api/create-rule",createRoute);
+app.use("/api/evaluate-rule",evaluateRoute);
+app.use("/api/combine-rule",combineRoute);
 
 app.listen(PORT,() =>{
     console.log(`Server is listening on port ${PORT}`);
