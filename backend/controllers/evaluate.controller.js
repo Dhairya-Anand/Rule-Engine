@@ -1,4 +1,4 @@
-const Rule = require("../models/rule.model");
+import Rule from "../models/rule.model.js";
 
 const evaluateController = async (req, res) => {
   try {
@@ -67,4 +67,4 @@ const evaluateController = async (req, res) => {
   }
 };
 
-module.exports = evaluateController;
+export default evaluateController;

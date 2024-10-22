@@ -1,4 +1,4 @@
-const Rule = require("../models/rule.model");
+import Rule from "../models/rule.model.js";
 
 const createController = async (req, res) => {
   try {
@@ -96,4 +96,4 @@ const createController = async (req, res) => {
   }
 };
 
-module.exports = createController;
+export default createController;

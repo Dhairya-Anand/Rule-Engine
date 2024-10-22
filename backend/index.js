@@ -1,9 +1,9 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const createRoute = require("./routes/create.route");
-const evaluateRoute = require("./routes/evaluate.route");
-const combineRoute = require("./routes/combine.rule");
-const path = require("path");
+import express from "express";
+import mongoose from "mongoose";
+import createRoute from "./routes/create.route.js";
+import evaluateRoute from "./routes/evaluate.route.js";
+import combineRoute from "./routes/combine.rule.js";
+import path from "path";
 
 const PORT = 3000;
 
@@ -15,6 +15,7 @@ catch(error){
     console.log("Error in mongodb connection", error.message);
 }
 
+const __dirname = path.resolve();
 
 const app = express();
 

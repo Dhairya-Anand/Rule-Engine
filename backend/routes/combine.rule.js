@@ -1,7 +1,7 @@
-const express = require("express");
+import express from "express";
 const router = express.Router();
-const combineController = require("../controllers/combine.controller");
+import combineController from "../controllers/combine.controller.js";
 
 router.post("/",combineController);
 
-module.exports = router;
+export default router;

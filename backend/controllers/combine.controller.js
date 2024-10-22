@@ -1,4 +1,4 @@
-const Rule = require("../models/rule.model");
+import Rule from "../models/rule.model.js";
 
 const combineController = async (req, res) => {
   try {
@@ -95,4 +95,4 @@ const combineController = async (req, res) => {
   }
 };
 
-module.exports = combineController;
+export default combineController;
