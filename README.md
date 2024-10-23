@@ -31,7 +31,7 @@ Make sure you have the following installed on your machine:
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/Dhairya-Anand/Rule-Engine.git
-   cd <project-directory>
+   cd Rule-Engine
 
 2. **Install backend dependencies:**
     ```bash
