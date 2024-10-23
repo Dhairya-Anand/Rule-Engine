@@ -64,7 +64,7 @@ Make sure you have the following installed on your machine:
 
 3. **Access the application**:
 
-- Open your browser and navigate to http://localhost:3000 to see the application in action.
+- Open your browser and navigate to http://localhost:5173 to see the application in action.
 
 ### API Endpoints
 - POST /api/create-rule: Create a new rule with a name and condition string.
