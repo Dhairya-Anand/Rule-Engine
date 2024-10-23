@@ -37,7 +37,7 @@ const EvaluateRule = () => {
       });
 
       const result = await response.json();
-
+      console.log(result);
       if (response.ok) {
         setResponseMessage(result.evaluationResult ? "True" : "False");
         setErrorMessage(null);

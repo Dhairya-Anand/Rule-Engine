@@ -34,6 +34,7 @@ const CombineRule = () => {
       });
 
       const data = await response.json();
+      console.log(data);
       if (response.ok) {
         setResponseMessage(data.message);
         setErrorMessage(null);
