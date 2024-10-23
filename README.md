@@ -69,7 +69,7 @@ Make sure you have the following installed on your machine:
 ### API Endpoints
 - POST /api/create-rule: Create a new rule with a name and condition string.
 - POST /api/evaluate-rule: Evaluate a specified rule against provided data in JSON format.
-- POST /api/combine-rule: (To be implemented) Combine multiple rules for evaluation.
+- POST /api/combine-rule: Combine multiple rules for evaluation.
 
 ### Contributing
 - If you'd like to contribute to the project, please fork the repository and submit a pull request with your changes. Ensure that your code adheres to the project's style guidelines.
